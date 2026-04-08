@@ -1,0 +1,22 @@
+<main class="main">
+  <app-navbar    
+    [mensajeBienvenida] = "mensajeBienvenida"
+    (mensajeCliente) = "recibirInformacionDelCliente($event)"
+    
+  >
+  </app-navbar>
+  @if(existeMensajeCliente){
+    <h2>{{mensajeDelCliente}}</h2>
+  }@else{
+    <h2>el hijueputa no llegó</h2>
+  }
+
+  <button (click) = "actualizarInformacion(mensajeParaElServicio)">Actualizar informacion del servicio</button>
+  
+  <nav>
+    <a routerLink="/home">Ir a home</a>
+    <a routerLink="/login">Ir a login</a>
+  </nav>
+</main>
+
+<router-outlet />
